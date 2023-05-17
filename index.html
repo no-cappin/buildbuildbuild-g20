@@ -198,11 +198,56 @@
 						</div>
 					</div>
 					<footer>
-						<p>Lorem ipsum dolor sit sapien vestibulum ipsum primis?</p>
+						<p></p>
 					</footer>
 				</div>
 			</article>
-
+			<article id="visualization" class="wrapper style3">
+				<div class="container">
+					<header>
+						<h2>Data Visualization.</h2>
+						<p></p>
+					</header>
+					<div class="row">
+						<div class="col-6 col-6-medium col-12-small">
+							<article class="box style2">
+								<a href="#" class="image featured"><img src="images/pic02.jpg" alt="" /></a>
+								<h3><a href="#">Data Preprocessing</a></h3>
+								<p>Prior to data exploration, several preprocessing steps were necessary to prepare the data.</p>
+								<p><b>Ensuring Formatting Consistency</b> <br>
+									The date of posting was modified to reflect the format YYYY-MM-DD. This makes it easier to code the dataset in making a line graph.
+									Moreover, the content type of the tweets were also verified. Particularly, tweets that were both rational and emotional were altered to have the same format of “Rational, Emotional” to ensure that the code will classify the tweets into one category.
+								</p>
+								<p><b>Normalization/Standardization</b><br>
+									Standardization was done with the tweets’ likes, retweets, replies, and quote tweets, by getting the z-score of the tweets in terms of these four features. This was also done to identify possible outliers in the dataset.
+								</p>
+								<p><b>Handling Outliers</b><br>
+									For this study, outliers were considered as tweets that attained a z-score of 3.00 and above, in terms of likes, replies, retweets, and quote tweets. Upon standardization, 3 outliers were discovered. Since this is merely a minimal percentage of the tweets gathered, the researchers decided to omit these tweets, bringing the total number of tweets in the dataset to 152.
+								</p>
+								<p><b>Categorical Data Encoding</b><br>
+									Additionally, certain categorical features in the dataset were converted to a quantifiable value. This is particularly seen with the tweet types feature. A value of 1 was set for tweets who included a certain media type (e.g. photo/video, URL), while a value of 0 indicates the absence of such. 
+								</p>
+								<p><b>Handling Missing Values</b><br>
+									Upon reviewing the data collected, three features were found to be inconsistent.
+									<br><b>Views.</b> The view count of most tweets were unavailable during data collection; thus, the researchers decided to disregard this tweet feature for the subsequent parts of the study.
+									<br><b>Location.</b> The account locations of the tweet authors were inconsistent. Some accounts had dubious locations, while others did not provide a location in their account. Meanwhile, most accounts had the location “Philippines” or “Republic of the Philippines,” which are broad, and thus, will not provide much insight with the dataset. Thus, the researchers have also decided to dismiss this tweet feature.
+									<br><b>Account Bio.</b> The account bios of tweet authors were also inconsistent. Similar to account location, some accounts did not have a bio. Meanwhile, other account bios do not provide significant insight into the study, as they were unrelated to the topic. Thus, the researchers have decided to omit this tweet feature.
+								</p>
+							</article>
+						</div>
+						<div class="col-6 col-6-medium col-12-small">
+							<article class="box style2">
+								<a href="#" class="image featured"><img src="images/pic01.jpg" alt="" /></a>
+								<h3><a href="#">Natural Language Processing</a></h3>
+								<p>The Natural Language Toolkit (NLTK) library was used. First, the text was converted to lowercase and punctuations were removed using built-in string methods. The text was then translated to English using google translate and the emojis and emoticons were converted to plain text. Built-in functions from NLTK were utilized for tokenization and the stopwords were removed. Finally, the data was stemmed and lemmatized by also using the NLTK library. </p>
+							</article>
+						</div>
+					</div>
+					<footer>
+						<p></p>
+					</footer>
+				</div>
+			</article>
 			<!-- Results -->
 			<article id="results" class="wrapper style3">
 				<div class="container">
