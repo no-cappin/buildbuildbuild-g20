@@ -404,52 +404,43 @@
 								</p>
 							</article>
 						</div>
+					</div>
+					<div class="row">
 						<div class="col-6 col-6-medium col-12-small">
 							<article class="box style2" align="center" style="width:1200px">
-								<a href="https://drive.google.com/file/d/1rhDUaHQUSx4FyQMTwmxhjZ_uudPFVyN9" class="image featured"><img src="images/results_regression.png" alt="" /></a>
-								<h3 style="color:#002034">Statistical Hypothesis Test</h3>
+								<a href="https://drive.google.com/file/d/1PvPOAAqYU9RF9FMBaiLMPjLm7kVo6p2z" class="image featured"><img src="images/results_machinelearning.png" alt="" /></a>
+								<h3 style="color:#002034">Machine Learning Outcomes</h3>
 								<p align = "justify" style = "color:black">
-								<br>The process behind the statistical testing for this project could be seen in this
-								<a href="https://colab.research.google.com/drive/1sJ3kz263nCIPX6TDBSeozK-Zsko54wih">Google Colab file</a>.<br>
-								<span style="font-weight:bold; font-size:110%; color:#002034"><br>ASSUMPTIONS</span><br>
-								Simple linear regression models rely on three main assumptions about the data.<br><br>
-								The first assumption is the <b>homogeneity of variance</b>, which implies that the 
-								error size in the prediction remains relatively constant across different values of 
-								the independent variable. It is important to note that linear regression minimizes 
-								the root mean square error (RMSE), and thus, regions with higher error have a greater 
-								impact on the model. To address this, the dataset is segmented to prevent skewed results, 
-								and separate regression models are applied to each segment.<br><br>
-								The second assumption is the <b>independence of observations</b>. This means that the dataset's 
-								observations were collected using valid sampling methods. Failing to use appropriate sampling 
-								methods introduces bias into the dataset, which may result in a hidden relationship that exists 
-								only within the sample and not within the actual population. To mitigate this, simple random 
-								sampling is employed during data collection.<br><br>
-								The last assumption is <b>linearity</b>. Linearity assumes that the relationship between the independent 
-								and dependent variable is linear. If a linear relationship is not present in the dataset, nonlinear 
-								regression models are more preferred. To confirm that a linear regression model will suffice for the 
-								dataset, line graphs were  manually inspected for linear and non-linear patterns during data visualization.
+								<span style="font-weight:bold; font-size:110%; color:#002034"><br>EVENT DETECTION MODELS</span><br>
+								The researchers decided to use the following machine learning models in the study:<br>
+								<b>Peak Detection</b>, <b>Change Point Detection</b>, and <b>Anomaly Detection</b>.<br><br>
+								First, <b>peak detection</b> spots all local maxima by comparing its neighboring values. Moreover, 
+								subsets of peaks can be identified by setting values to the peak’s properties such as height, width, 
+								threshold, distance, and prominence.<br><br>
+								Second, <b>change point detection</b> works by identifying time steps when some statistical property changes, 
+								in the case of the study, frequency. Moreover, the researchers decided to use the ruptures Python library for 
+								the offline change point detection. The detection was done via the Pelt algorithm as well as imposing a penalty 
+								value for the algorithm. The output features of this machine learning model are the number of change points as 
+								well as its corresponding dates.<br><br>
+								Lastly, <b>anomaly detection</b> works by identifying data points that deviate from the dataset’s normal behavior. 
+								The unsupervised detection technique was done using isolation forests which uses a tree structure wherein data points 
+								are subsampled based on randomly selected features. Moreover, data points that end up on shorter branches indicate 
+								anomalies as these were easier for the tree to separate these from other observations.
 								</p>
 								<p align = "justify" style = "color:black">
-								<span style="font-weight:bold; font-size:110%; color:#002034">REGRESSION RESULTS</span><br>
-								<b>Pre-Campaign Period:</b><br>
-								There is a <u>significant relationship</u> between the misattribution tweets of CCLEX to Duterte and 
-								Build, Build, Build program in the pre-campaign period with p-value of 7.5539692847433205x10-6, 
-								regression coefficient or R2 of 0.17, and a root mean squared error of 0.20.<br><br>
-								<b>During Campaign Period:</b><br>
-								There is a <u>significant relationship</u> between the misattribution tweets of CCLEX to Duterte 
-								and Build, Build, Build program in the campaign period with p-value of 0.029857949629570644, 
-								regression coefficient or R2 of 0.36, and a root mean squared error of 0.22.<br><br>
-								<b>Post-Campaign Period:</b><br>
-								There is a <u>significant relationship</u> between the misattribution tweets of CCLEX to Duterte and 
-								Build, Build, Build program in the post-campaign period with p-value of 0.0036559289265099314, 
-								regression coefficient or R2 of 0.24, and a root mean squared error of 0.17.
-								</p>
-								<p align = "justify" style = "color:black">
-								<span style="font-weight:bold; font-size:110%; color:#002034">INTERPRETATION</span><br>
-								The researchers <b>reject the null hypothesis</b> at the 5% significance level. There is sufficient 
-								evidence to support the claim that there is a significant trend of misattribution tweets of CCLEX to 
-								Duterte and Build, Build, Build program before, during, and after the May 2022 Philippine electoral 
-								campaign period.
+								<span style="font-weight:bold; font-size:110%; color:#002034">MODEL TRAINING</span><br>
+								<b>Peak Detection.</b> The researchers decided to set the parameters to the following values in peak detection: 
+								<b>height</b> to <b>5</b>, denoting that minimum of 5 weekly tweets; <b>width</b> to <b>1</b>, which means “breadth of a peak” is 1; 
+								<b>threshold</b> to <b>1</b>, meaning the vertical distance between weekly tweets is set to 1; <b>distance</b> to 
+								<b>4</b>, indicating that peaks have distance of a month since the researchers used weekly intervals; and <b>prominence</b> 
+								to <b>3</b>, which denotes that the minimum vertical distance between the peak and its contour line.<br><br>
+								<b>Change-Point Detection.</b> Meanwhile, the researchers set the <b>penalty value</b> of the Pelt algorithm in Change Point detection 
+								to <b>1.25</b>, by means of <b>visual inspection</b>. The researchers opt for this value as lower penalty value led to more change points that 
+								can be caused by noise as well as lesser significance of identified change points, meanwhile setting higher penalty value might miss out 
+								relevant change points in the dataset.<br><br>
+								<b>Anomaly Detection.</b> Lastly, the researchers opted for a conservative value for the contamination parameter in Anomaly detection. 
+								The researchers set the value for the <b>contamination parameter</b> to <b>0.004</b> which indicates the fraction of the dataset containing 
+								abnormal instances.
 								</p>
 							</article>
 						</div>
