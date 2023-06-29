@@ -351,19 +351,132 @@
 			<!-- Results -->
 			<article id="results" class="wrapper style3">
 				<div class="container">
+					<header>
+						<h2 style="color:#002034">Here's what we found out.</h2>
+					</header>
 					<div class="row">
 						<div class="col-6 col-6-medium col-12-small">
-							<article class="box style2">
-								<a href="#" class="image featured"><img src="images/pic02.jpg" alt="" /></a>
+							<article class="box style2" align="center" style="width:1200px">
+								<a href="#" class="image featured"><img src="images/results_regression.png" alt="" /></a>
 								<h3 style="color:#002034">Statistical Hypothesis Test</h3>
-								<p>Ornare nulla proin odio consequat.</p>
+								<p align = "justify" style = "color:black">
+								COLAB COLAB COLAB<br>
+								<span style="font-weight:bold; font-size:110%; color:#002034"><br>ASSUMPTIONS</span><br>
+								Simple linear regression models rely on three main assumptions about the data.<br>
+								The first assumption is the <b>homogeneity of variance</b>, which implies that the 
+								error size in the prediction remains relatively constant across different values of 
+								the independent variable. It is important to note that linear regression minimizes 
+								the root mean square error (RMSE), and thus, regions with higher error have a greater 
+								impact on the model. To address this, the dataset is segmented to prevent skewed results, 
+								and separate regression models are applied to each segment.<br>
+								The second assumption is the independence of observations. This means that the dataset's 
+								observations were collected using valid sampling methods. Failing to use appropriate sampling 
+								methods introduces bias into the dataset, which may result in a hidden relationship that exists 
+								only within the sample and not within the actual population. To mitigate this, simple random 
+								sampling is employed during data collection.<br>
+								The last assumption is linearity. Linearity assumes that the relationship between the independent 
+								and dependent variable is linear. If a linear relationship is not present in the dataset, nonlinear 
+								regression models are more preferred. To confirm that a linear regression model will suffice for the 
+								dataset, line graphs were  manually inspected for linear and non-linear patterns during data visualization.
+								</p>
+								<p align = "justify" style = "color:black">
+								<span style="font-weight:bold; font-size:110%; color:#002034">STANDARDIZATION</span><br>
+								Standardization was done with the tweets’ likes, retweets, replies, and quote tweets, by getting the z-score 
+								of the tweets in terms of these four features. This was done to identify possible outliers in the dataset.
+								</p>
+								<p align = "justify" style = "color:black">
+								<span style="font-weight:bold; font-size:110%; color:#002034">HANDLING OUTLIERS</span><br>
+								For this study, outliers were considered as tweets that attained a z-score of 3.00 and above, in terms of likes, 
+								replies, retweets, and quote tweets. Upon standardization, 3 outliers were discovered. Since this is merely a 
+								minimal percentage of the tweets gathered, the researchers decided to omit these tweets, bringing the total number 
+								of tweets in the dataset to 162.
+								</p>
+								<p align = "justify" style = "color:black">
+								<span style="font-weight:bold; font-size:110%; color:#002034">CATEGORICAL DATA ENCODING</span><br>
+								Additionally, certain categorical features in the dataset were converted to a quantifiable value. This is 
+								particularly seen with the tweet types feature. A value of 1 was set for tweets who included a certain media type 
+								(e.g. photo/video, URL), while a value of 0 indicates the absence of such.
+								</p>
+								<p align = "justify" style = "color:black">
+								<span style="font-weight:bold; font-size:110%; color:#002034">HANDLING MISSING VALUES</span><br>
+								Upon reviewing the data collected, three features were found to be inconsistent.<br>
+								<b>Views.</b> The view count of most tweets were unavailable during data collection; thus, the researchers decided 
+								to disregard this tweet feature for the subsequent parts of the study. <br>
+								<b>Location</b> The account locations of the tweet authors were inconsistent. Some accounts had dubious locations, 
+								while others did not provide a location in their account. Meanwhile, most accounts had the location “Philippines” or 
+								“Republic of the Philippines,” which are broad, and thus, will not provide much insight with the dataset. Thus, the 
+								researchers have also decided to dismiss this tweet feature. <br>
+								<b>Account Bio.</b> The account bios of tweet authors were also inconsistent. Similar to account location, some
+								accounts did not have a bio. Meanwhile, other account bios do not provide significant insight into the study, as
+								they were unrelated to the topic. Thus, the researchers have decided to omit this tweet feature.
+								</p>
+								<p align = "justify" style = "color:black">
+								<span style="font-weight:bold; font-size:110%; color:#002034">TIME-SERIES ANALYSIS PREPARATION</span><br>
+								Data were binned to yearly, monthly, and weekly intervals using pivot tables in MS Excel. This is due to the difficulties
+								of binning weekly intervals in Python.
+								</p>
 							</article>
 						</div>
 						<div class="col-6 col-6-medium col-12-small">
-							<article class="box style2">
-								<a href="#" class="image featured"><img src="images/pic01.jpg" alt="" /></a>
+							<article class="box style2" align="center" style="width:1200px">
+								<a href="#" class="image featured"><img src="images/results_machinelearning.png" alt="" /></a>
 								<h3 style="color:#002034">Machine Learning Outcomes</h3>
-								<p>Ornare nulla proin odio consequat.</p>
+								<p align = "justify" style = "color:black">
+								COLAB COLAB COLAB<br>
+								<span style="font-weight:bold; font-size:110%; color:#002034"><br>ASSUMPTIONS</span><br>
+								Simple linear regression models rely on three main assumptions about the data.<br>
+								The first assumption is the <b>homogeneity of variance</b>, which implies that the 
+								error size in the prediction remains relatively constant across different values of 
+								the independent variable. It is important to note that linear regression minimizes 
+								the root mean square error (RMSE), and thus, regions with higher error have a greater 
+								impact on the model. To address this, the dataset is segmented to prevent skewed results, 
+								and separate regression models are applied to each segment.<br>
+								The second assumption is the independence of observations. This means that the dataset's 
+								observations were collected using valid sampling methods. Failing to use appropriate sampling 
+								methods introduces bias into the dataset, which may result in a hidden relationship that exists 
+								only within the sample and not within the actual population. To mitigate this, simple random 
+								sampling is employed during data collection.<br>
+								The last assumption is linearity. Linearity assumes that the relationship between the independent 
+								and dependent variable is linear. If a linear relationship is not present in the dataset, nonlinear 
+								regression models are more preferred. To confirm that a linear regression model will suffice for the 
+								dataset, line graphs were  manually inspected for linear and non-linear patterns during data visualization.
+								</p>
+								<p align = "justify" style = "color:black">
+								<span style="font-weight:bold; font-size:110%; color:#002034">STANDARDIZATION</span><br>
+								Standardization was done with the tweets’ likes, retweets, replies, and quote tweets, by getting the z-score 
+								of the tweets in terms of these four features. This was done to identify possible outliers in the dataset.
+								</p>
+								<p align = "justify" style = "color:black">
+								<span style="font-weight:bold; font-size:110%; color:#002034">HANDLING OUTLIERS</span><br>
+								For this study, outliers were considered as tweets that attained a z-score of 3.00 and above, in terms of likes, 
+								replies, retweets, and quote tweets. Upon standardization, 3 outliers were discovered. Since this is merely a 
+								minimal percentage of the tweets gathered, the researchers decided to omit these tweets, bringing the total number 
+								of tweets in the dataset to 162.
+								</p>
+								<p align = "justify" style = "color:black">
+								<span style="font-weight:bold; font-size:110%; color:#002034">CATEGORICAL DATA ENCODING</span><br>
+								Additionally, certain categorical features in the dataset were converted to a quantifiable value. This is 
+								particularly seen with the tweet types feature. A value of 1 was set for tweets who included a certain media type 
+								(e.g. photo/video, URL), while a value of 0 indicates the absence of such.
+								</p>
+								<p align = "justify" style = "color:black">
+								<span style="font-weight:bold; font-size:110%; color:#002034">HANDLING MISSING VALUES</span><br>
+								Upon reviewing the data collected, three features were found to be inconsistent.<br>
+								<b>Views.</b> The view count of most tweets were unavailable during data collection; thus, the researchers decided 
+								to disregard this tweet feature for the subsequent parts of the study. <br>
+								<b>Location</b> The account locations of the tweet authors were inconsistent. Some accounts had dubious locations, 
+								while others did not provide a location in their account. Meanwhile, most accounts had the location “Philippines” or 
+								“Republic of the Philippines,” which are broad, and thus, will not provide much insight with the dataset. Thus, the 
+								researchers have also decided to dismiss this tweet feature. <br>
+								<b>Account Bio.</b> The account bios of tweet authors were also inconsistent. Similar to account location, some
+								accounts did not have a bio. Meanwhile, other account bios do not provide significant insight into the study, as
+								they were unrelated to the topic. Thus, the researchers have decided to omit this tweet feature.
+								</p>
+								<p align = "justify" style = "color:black">
+								<span style="font-weight:bold; font-size:110%; color:#002034">TIME-SERIES ANALYSIS PREPARATION</span><br>
+								Data were binned to yearly, monthly, and weekly intervals using pivot tables in MS Excel. This is due to the difficulties
+								of binning weekly intervals in Python.
+								</p>
 							</article>
 						</div>
 						<div class="col-6 col-6-medium col-12-small">
