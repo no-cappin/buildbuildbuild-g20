@@ -21,6 +21,7 @@
 					<li><a href="#data">Data</a></li>
 					<li><a href="#methods">Methods</a></li>
 					<li><a href="#results">Results</a></li>
+					<li><a href="#conclusion">Conclusion</a></li>
 					<li><a href="#team">About Us</a></li>
 				</ul>
 			</nav>
@@ -455,8 +456,65 @@
 					</div>
 				</div>
 			</article>
-
-		<!-- Team -->
+		
+			<!-- Conclusion -->
+			<article id="conclusion" class="wrapper style2">
+				<div class="container">
+					<header>
+						<h2 style="color:#002034">Here's what we conclude.</h2>
+					</header>
+					<div class="row">
+						<div class="col-6 col-6-medium col-12-small">
+							<article class="box style2" align="center" style="width:1200px">
+								<a href="https://drive.google.com/file/d/1PvPOAAqYU9RF9FMBaiLMPjLm7kVo6p2z" class="image featured"><img src="images/results_machinelearning.png" alt="" /></a>
+								<h3 style="color:#002034">Machine Learning Outcomes</h3>
+								<p align = "justify" style = "color:black">
+								<br>The process behind the machine learning for this project could be seen in this
+								<a href="https://colab.research.google.com/drive/1sJ3kz263nCIPX6TDBSeozK-Zsko54wih">Google Colab file</a>.<br>
+								<span style="font-weight:bold; font-size:110%; color:#002034"><br>EVENT DETECTION MODELS</span><br>
+								The researchers decided to use the following machine learning models in the study:
+								<b>Peak Detection</b>, <b>Change Point Detection</b>, and <b>Anomaly Detection</b>.<br><br>
+								First, <b>peak detection</b> spots all local maxima by comparing its neighboring values. Moreover, 
+								subsets of peaks can be identified by setting values to the peak’s properties such as height, width, 
+								threshold, distance, and prominence.<br><br>
+								Second, <b>change point detection</b> works by identifying time steps when some statistical property changes, 
+								in the case of the study, frequency. Moreover, the researchers decided to use the ruptures Python library for 
+								the offline change point detection. The detection was done via the Pelt algorithm as well as imposing a penalty 
+								value for the algorithm. The output features of this machine learning model are the number of change points as 
+								well as its corresponding dates.<br><br>
+								Lastly, <b>anomaly detection</b> works by identifying data points that deviate from the dataset’s normal behavior. 
+								The unsupervised detection technique was done using isolation forests which uses a tree structure wherein data points 
+								are subsampled based on randomly selected features. Moreover, data points that end up on shorter branches indicate 
+								anomalies as these were easier for the tree to separate these from other observations.
+								</p>
+								<p align = "justify" style = "color:black">
+								<span style="font-weight:bold; font-size:110%; color:#002034">MODEL TRAINING</span><br>
+								<b>Peak Detection.</b> The researchers decided to set the parameters to the following values in peak detection: 
+								<b>height</b> to <b>5</b>, denoting that minimum of 5 weekly tweets; <b>width</b> to <b>1</b>, which means “breadth of a peak” is 1; 
+								<b>threshold</b> to <b>1</b>, meaning the vertical distance between weekly tweets is set to 1; <b>distance</b> to 
+								<b>4</b>, indicating that peaks have distance of a month since the researchers used weekly intervals; and <b>prominence</b> 
+								to <b>3</b>, which denotes that the minimum vertical distance between the peak and its contour line.<br><br>
+								<b>Change-Point Detection.</b> Meanwhile, the researchers set the <b>penalty value</b> of the Pelt algorithm in Change Point detection 
+								to <b>1.25</b>, by means of <b>visual inspection</b>. The researchers opt for this value as lower penalty value led to more change points that 
+								can be caused by noise as well as lesser significance of identified change points, meanwhile setting higher penalty value might miss out 
+								relevant change points in the dataset.<br><br>
+								<b>Anomaly Detection.</b> Lastly, the researchers opted for a conservative value for the contamination parameter in Anomaly detection. 
+								The researchers set the value for the <b>contamination parameter</b> to <b>0.004</b> which indicates the fraction of the dataset containing 
+								abnormal instances.
+								</p>
+								<p align = "justify" style = "color:black">
+								<span style="font-weight:bold; font-size:110%; color:#002034">EVALUATION RESULTS</span><br>
+								Misattribution tweets were found to have peaked in the weeks <b>June 13 to 19, 2021</b> and <b>April 24 to 30, 2022.</b><br><br>
+								Change points were observed in misattribution tweets on several dates: <b>May 2</b> and <b>November 28, 2021</b>; and <b>April 17, May 22,</b> and <b>July 31, 2022</b>.<br><br>
+								Anomalous misattribution tweet frequency was found in the week <b>April 24 to 30, 2022</b>. 
+								</p>
+							</article>
+						</div>
+					</div>
+				</div>
+			</article>
+		
+			<!-- Team -->
 			<article id="team" class="wrapper style4" style="background-color:#0d1e29">
 				<div class="container medium">
 					<header>
