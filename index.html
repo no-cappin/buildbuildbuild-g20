@@ -118,18 +118,19 @@
 								<span class="fa fa-search" style="font-size:120px; color:#731a1f; margin-bottom:30px"></span><br>
 								<h3 style="color:#002034">Data Collection</h3>
 								<p align = "justify" style = "color:black">
-								<span align="center" style="font-weight:bold; size:110%"><br>TOOLS</span><br>
+								<span style="font-weight:bold; size:110%; color:#002034"><br>TOOLS</span><br>
 								The group collected tweets primarily through two ways: the <b>Advanced Search feature</b> in the 
 								Twitter website, and the automated <b>Apify Twitter Scraper</b>.<br>
 								</p>
 								<p align = "justify" style = "color:black">
-								<span align="center" style="font-weight:bold; size:110%">COLLECTION PERIOD</span><br>
+								<span style="font-weight:bold; size:110%; color:#002034">COLLECTION PERIOD</span><br>
 								Data collection spanned from March 6, 2023 to April 13, 2023, while additional tweets were 
 								gathered on June 16, 2023. <br>
 								Overall, a total of <strong>165 tweets</strong> were gathered.
 								</p>
-								<b>KEYWORDS</b><br>
-								<p align = "justify" style = "color:black">Using the aforementioned tools, misattributing tweets were gathered with the following keywords: <br>
+								<p align = "justify" style = "color:black">
+								<span style="font-weight:bold; size:110%; color:#002034">KEYWORDS</span><br>
+								Using the aforementioned tools, misattributing tweets were gathered with the following keywords: <br>
 								<b>Terms related to CCLEX</b> - cclex, #cclex, cebu cordova <br>
 								<b>Terms related to Build, Build, Build</b> - #buildbuildbuild, buildbuildbuild, bbb <br>
 								<b>Terms related to Rodrigo Duterte</b> - #dutertelegacy #tatakduterte, tatak duterte, prrd, duterte, digong <br>
@@ -178,44 +179,50 @@
 					<div class="row">
 						<div class="col-6 col-6-medium col-12-small">
 							<article class="box style2">
-								<a href="#" class="image featured"><img src="images/pic02.jpg" alt="" /></a>
+								<span class="fa fa-gears" style="font-size:120px; color:#731a1f; margin-bottom:30px"></span><br>
 								<h3 style="color:#002034">Data Preprocessing</h3>
 								<p align = "justify" style = "color:black">
-								Prior to data exploration, several preprocessing steps were necessary to prepare the data.
+								<span style="font-weight:bold; size:110%; color:#002034"><br>ENSURING FORMATTING CONSISTENCY</span><br>
+								For this step, the content type of the tweets were verified. Particularly, tweets that were both rational 
+								and emotional were altered to have the same format of “Rational, Emotional” to ensure that the code will 
+								classify the tweets into one category. Additionally, the date formats of the tweets were also rechecked, 
+								and modified to have the format YY/MM/DD. This is to make it easier to sort the data upon performing linear regression.<br>
 								</p>
-								<b><br>ENSURING FORMATTING CONSISTENCY</b><br>
 								<p align = "justify" style = "color:black">
-								For this step, the content type of the tweets were verified. Particularly, tweets that were both 
-								rational and emotional were altered to have the same format of “Rational, Emotional” to ensure that 
-								the code will classify the tweets into one category. Additionally, the date formats of the tweets were 
-								also rechecked, and modified to have the format YY/MM/DD. This is to make it easier to sort the data upon 
-								performing linear regression.
+								<span style="font-weight:bold; size:110%; color:#002034">STANDARDIZATION</span><br>
+								Standardization was done with the tweets’ likes, retweets, replies, and quote tweets, by getting the z-score 
+								of the tweets in terms of these four features. This was done to identify possible outliers in the dataset.
 								</p>
-								<b><br>STANDARDIZATION</b><br>
 								<p align = "justify" style = "color:black">
-								Standardization was done with the tweets’ likes, retweets, replies, and quote tweets, by getting the 
-								z-score of the tweets in terms of these four features. This was also done to identify possible outliers 
-								in the dataset.
+								<span style="font-weight:bold; size:110%; color:#002034">HANDLING OUTLIERS</span><br>
+								For this study, outliers were considered as tweets that attained a z-score of 3.00 and above, in terms of likes, 
+								replies, retweets, and quote tweets. Upon standardization, 3 outliers were discovered. Since this is merely a 
+								minimal percentage of the tweets gathered, the researchers decided to omit these tweets, bringing the total number 
+								of tweets in the dataset to 162.
 								</p>
-								<b><br>HANDLING OUTLIERS</b><br>
 								<p align = "justify" style = "color:black">
-								For this study, outliers were considered as tweets that attained a z-score of 3.00 and above, in terms of 
-								likes, replies, retweets, and quote tweets. Upon standardization, 3 outliers were discovered. Since this is 
-								merely a minimal percentage of the tweets gathered, the researchers decided to omit these tweets, bringing the 
-								total number of tweets in the dataset to 162.
-								</p>
-								<b><br>CATEGORICAL DATA ENCODING</b><br>
-								<p align = "justify" style = "color:black">
+								<span style="font-weight:bold; size:110%; color:#002034">CATEGORICAL DATA ENCODING</span><br>
 								Additionally, certain categorical features in the dataset were converted to a quantifiable value. This is 
-								particularly seen with the tweet types feature. A value of 1 was set for tweets who included a certain media 
-								type (e.g. photo/video, URL), while a value of 0 indicates the absence of such. 
+								particularly seen with the tweet types feature. A value of 1 was set for tweets who included a certain media type 
+								(e.g. photo/video, URL), while a value of 0 indicates the absence of such.
 								</p>
-								<b><br>HANDLING MISSING VALUES</b><br>
 								<p align = "justify" style = "color:black">
-								Upon reviewing the data collected, three features were found to be inconsistent.
-								<br><b>Views.</b> The view count of most tweets were unavailable during data collection; thus, the researchers decided to disregard this tweet feature for the subsequent parts of the study.
-								<br><b>Location.</b> The account locations of the tweet authors were inconsistent. Some accounts had dubious locations, while others did not provide a location in their account. Meanwhile, most accounts had the location “Philippines” or “Republic of the Philippines,” which are broad, and thus, will not provide much insight with the dataset. Thus, the researchers have also decided to dismiss this tweet feature.
-								<br><b>Account Bio.</b> The account bios of tweet authors were also inconsistent. Similar to account location, some accounts did not have a bio. Meanwhile, other account bios do not provide significant insight into the study, as they were unrelated to the topic. Thus, the researchers have decided to omit this tweet feature.
+								<span style="font-weight:bold; size:110%; color:#002034">CATEGORICAL DATA ENCODING</span><br>
+								Upon reviewing the data collected, three features were found to be inconsistent.<br>
+								<b>Views.</b> The view count of most tweets were unavailable during data collection; thus, the researchers decided 
+								to disregard this tweet feature for the subsequent parts of the study. <br>
+								<b>Location</b> The account locations of the tweet authors were inconsistent. Some accounts had dubious locations, 
+								while others did not provide a location in their account. Meanwhile, most accounts had the location “Philippines” or 
+								“Republic of the Philippines,” which are broad, and thus, will not provide much insight with the dataset. Thus, the 
+								researchers have also decided to dismiss this tweet feature. <br>
+								<b>Account Bio.</b> The account bios of tweet authors were also inconsistent. Similar to account location, some <br>
+								accounts did not have a bio. Meanwhile, other account bios do not provide significant insight into the study, as <br>
+								they were unrelated to the topic. Thus, the researchers have decided to omit this tweet feature.
+								</p>
+								<p align = "justify" style = "color:black">
+								<span style="font-weight:bold; size:110%; color:#002034">TIME-SERIES ANALYSIS PREPARATION</span><br>
+								Data were binned to yearly, monthly, and weekly intervals using pivot tables in MS Excel. This is due to the difficulties
+								of binning weekly intervals in Python.
 								</p>
 							</article>
 						</div>
