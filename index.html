@@ -405,6 +405,57 @@
 							</article>
 						</div>
 					</div>
+					<div class="row">
+						<div class="col-6 col-6-medium col-12-small">
+							<article class="box style2" align="center" style="width:1200px">
+								<a href="https://drive.google.com/file/d/1rhDUaHQUSx4FyQMTwmxhjZ_uudPFVyN9" class="image featured"><img src="images/results_regression.png" alt="" /></a>
+								<h3 style="color:#002034">Statistical Hypothesis Test</h3>
+								<p align = "justify" style = "color:black">
+								<br>The process behind the statistical testing for this project could be seen in this
+								<a href="https://colab.research.google.com/drive/1sJ3kz263nCIPX6TDBSeozK-Zsko54wih">Google Colab file</a>.<br>
+								<span style="font-weight:bold; font-size:110%; color:#002034"><br>ASSUMPTIONS</span><br>
+								Simple linear regression models rely on three main assumptions about the data.<br><br>
+								The first assumption is the <b>homogeneity of variance</b>, which implies that the 
+								error size in the prediction remains relatively constant across different values of 
+								the independent variable. It is important to note that linear regression minimizes 
+								the root mean square error (RMSE), and thus, regions with higher error have a greater 
+								impact on the model. To address this, the dataset is segmented to prevent skewed results, 
+								and separate regression models are applied to each segment.<br><br>
+								The second assumption is the <b>independence of observations</b>. This means that the dataset's 
+								observations were collected using valid sampling methods. Failing to use appropriate sampling 
+								methods introduces bias into the dataset, which may result in a hidden relationship that exists 
+								only within the sample and not within the actual population. To mitigate this, simple random 
+								sampling is employed during data collection.<br><br>
+								The last assumption is <b>linearity</b>. Linearity assumes that the relationship between the independent 
+								and dependent variable is linear. If a linear relationship is not present in the dataset, nonlinear 
+								regression models are more preferred. To confirm that a linear regression model will suffice for the 
+								dataset, line graphs were  manually inspected for linear and non-linear patterns during data visualization.
+								</p>
+								<p align = "justify" style = "color:black">
+								<span style="font-weight:bold; font-size:110%; color:#002034">REGRESSION RESULTS</span><br>
+								<b>Pre-Campaign Period:</b><br>
+								There is a <u>significant relationship</u> between the misattribution tweets of CCLEX to Duterte and 
+								Build, Build, Build program in the pre-campaign period with p-value of 7.5539692847433205x10-6, 
+								regression coefficient or R2 of 0.17, and a root mean squared error of 0.20.<br><br>
+								<b>During Campaign Period:</b><br>
+								There is a <u>significant relationship</u> between the misattribution tweets of CCLEX to Duterte 
+								and Build, Build, Build program in the campaign period with p-value of 0.029857949629570644, 
+								regression coefficient or R2 of 0.36, and a root mean squared error of 0.22.<br><br>
+								<b>Post-Campaign Period:</b><br>
+								There is a <u>significant relationship</u> between the misattribution tweets of CCLEX to Duterte and 
+								Build, Build, Build program in the post-campaign period with p-value of 0.0036559289265099314, 
+								regression coefficient or R2 of 0.24, and a root mean squared error of 0.87.
+								</p>
+								<p align = "justify" style = "color:black">
+								<span style="font-weight:bold; font-size:110%; color:#002034">INTERPRETATION</span><br>
+								The researchers <b>reject the null hypothesis</b> at the 5% significance level. There is sufficient 
+								evidence to support the claim that there is a significant trend of misattribution tweets of CCLEX to 
+								Duterte and Build, Build, Build program before, during, and after the May 2022 Philippine electoral 
+								campaign period.
+								</p>
+							</article>
+						</div>
+					</div>
 					<footer>
 						<p>Want to learn more? Take a look at our source codes.</p>
 						<a href="#contact" class="button large scrolly">Github Repo</a>
